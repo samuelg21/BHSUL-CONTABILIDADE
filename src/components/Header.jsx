@@ -40,13 +40,6 @@ const Header = () => {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                         </a>
                     ))}
-                    <a
-                        href="#client-area"
-                        className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primary-dark hover:shadow-lg transform hover:-translate-y-0.5 transition duration-300 font-medium text-sm"
-                    >
-                        <User size={18} />
-                        Área do Cliente
-                    </a>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -75,16 +68,7 @@ const Header = () => {
                             </a>
                         ))}
 
-                        <div className="pt-4">
-                            <a
-                                href="#client-area"
-                                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full hover:bg-primary-dark transition duration-300 shadow-lg font-bold text-lg"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                <User size={22} />
-                                Área do Cliente
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             )}
