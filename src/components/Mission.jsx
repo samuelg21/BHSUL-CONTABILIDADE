@@ -39,7 +39,7 @@ const Mission = () => {
                                 className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
                             />
                             <div className="absolute bottom-0 left-0 bg-primary/90 text-white p-6 rounded-tr-3xl backdrop-blur-sm shadow-lg">
-                                <p className="font-bold text-xl">15+ Anos</p>
+                                <p className="font-bold text-xl">30+ Anos</p>
                                 <p className="text-sm">de excelência</p>
                             </div>
                         </div>
