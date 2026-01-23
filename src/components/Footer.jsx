@@ -48,15 +48,34 @@ const Footer = () => {
                         <ul className="space-y-4 text-sm inline-block text-left md:block">
                             <li className="flex items-start gap-3 justify-center md:justify-start">
                                 <MapPin size={18} className="text-primary mt-1 shrink-0" />
-                                <span>Rua Desembargador Mario Mattos,<br />528/201 - Serra/BH</span>
+                                <a 
+                                    href="https://www.google.com/maps/search/?api=1&query=Rua+Desembargador+Mario+Mattos,+528/201+-+Serra,+Belo+Horizonte+-+MG" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition-colors text-left"
+                                >
+                                    Rua Desembargador Mario Mattos,<br />528/201 - Serra/BH
+                                </a>
                             </li>
                             <li className="flex items-center gap-3 justify-center md:justify-start">
                                 <Phone size={18} className="text-primary shrink-0" />
-                                <span>(31) 3653-6954</span>
+                                <a 
+                                    href="https://wa.me/553136536954" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition-colors"
+                                >
+                                    (31) 3653-6954
+                                </a>
                             </li>
                             <li className="flex items-center gap-3 justify-center md:justify-start">
                                 <Mail size={18} className="text-primary shrink-0" />
-                                <span>bhsul@bhsul.com.br</span>
+                                <a 
+                                    href="mailto:bhsul@bhsul.com.br" 
+                                    className="hover:text-primary transition-colors"
+                                >
+                                    bhsul@bhsul.com.br
+                                </a>
                             </li>
                         </ul>
                     </div>
