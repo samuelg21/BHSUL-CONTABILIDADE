@@ -61,21 +61,25 @@ const Services = () => {
                     </a>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="group bg-surface p-8 rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1"
+                            className="group bg-surface p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1"
                         >
-                            <div className="bg-white text-accent w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 border border-gray-100 group-hover:border-accent/30">
-                                {service.icon}
+                            <div className="flex items-start gap-4 sm:block">
+                                <div className="bg-white text-accent w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center shadow-sm mb-0 sm:mb-5 border border-gray-100 group-hover:border-accent/30">
+                                    {service.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-lg sm:text-xl font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-sm sm:text-base text-text-dim leading-relaxed">
+                                        {service.description}
+                                    </p>
+                                </div>
                             </div>
-                            <h3 className="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
-                                {service.title}
-                            </h3>
-                            <p className="text-text-dim leading-relaxed">
-                                {service.description}
-                            </p>
                         </div>
                     ))}
                 </div>
