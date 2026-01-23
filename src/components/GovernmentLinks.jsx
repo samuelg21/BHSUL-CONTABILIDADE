@@ -51,11 +51,11 @@ const links = [
 
 const GovernmentLinks = () => {
     return (
-        <section className="py-24 section-muted">
+        <section id="acesso-rapido" className="py-24 section-muted">
             <div className="container-custom">
                 <div className="mb-14 text-left">
                     <div className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-[0.3em] mb-4">
-                        Links oficiais
+                        Acesso rapido
                     </div>
                     <h2 className="section-title text-left">
                         Acesso rapido a fontes <span className="text-accent">confiaveis</span>
