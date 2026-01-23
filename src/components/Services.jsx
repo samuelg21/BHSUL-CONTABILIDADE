@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, FileText, LineChart, Building2, PiggyBank, Calculator, ArrowRight } from 'lucide-react';
+import { Briefcase, FileText, LineChart, Building2, PiggyBank, Calculator, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const services = [
     {
@@ -31,6 +31,11 @@ const services = [
         icon: <Calculator size={28} />,
         title: 'BPO Financeiro',
         description: 'Gestão financeira terceirizada para foco total no core do negócio.'
+    },
+    {
+        icon: <ShieldCheck size={28} />,
+        title: 'Certificado Digital',
+        description: 'Emissão e renovação de certificados digitais para pessoas físicas e jurídicas com segurança e agilidade.'
     }
 ];
 
