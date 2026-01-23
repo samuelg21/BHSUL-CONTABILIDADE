@@ -1,47 +1,81 @@
 import React from 'react';
-import { FileText, Calculator, Users, TrendingUp, ShieldCheck, Briefcase } from 'lucide-react';
+import { Briefcase, FileText, LineChart, Building2, PiggyBank, Calculator, ArrowRight } from 'lucide-react';
 
 const services = [
     {
-        icon: <Briefcase size={32} />,
-        title: "Abertura de Empresas",
-        description: "Assessoria completa para regularização e abertura do seu negócio com agilidade."
+        icon: <LineChart size={28} />,
+        title: 'Contabilidade Empresarial',
+        description: 'Rotina contábil estruturada, relatórios claros e suporte para decisões estratégicas.'
     },
     {
-        icon: <Users size={32} />,
-        title: "Departamento Pessoal",
-        description: "Gestão de folha de pagamento, admissões, rescisões e e-Social."
+        icon: <FileText size={28} />,
+        title: 'Imposto de Renda',
+        description: 'Declarações com segurança, redução de riscos e acompanhamento personalizado.'
     },
     {
-        icon: <FileText size={32} />,
-        title: "Departamento Tributário",
-        description: "Apuração de impostos e planejamento tributário eficiente para sua empresa."
+        icon: <PiggyBank size={28} />,
+        title: 'Assessoria Financeira',
+        description: 'Diagnóstico de caixa, indicadores e planos para aumentar a rentabilidade.'
+    },
+    {
+        icon: <Building2 size={28} />,
+        title: 'Abertura de Empresas',
+        description: 'Abertura rápida com escolha do regime ideal e documentação sem burocracia.'
+    },
+    {
+        icon: <Briefcase size={28} />,
+        title: 'Departamento Pessoal',
+        description: 'Folha, eSocial e rotinas trabalhistas com precisão e conformidade.'
+    },
+    {
+        icon: <Calculator size={28} />,
+        title: 'BPO Financeiro',
+        description: 'Gestão financeira terceirizada para foco total no core do negócio.'
     }
 ];
 
 const Services = () => {
     return (
-        <section id="services" className="py-20 bg-gray-50">
+        <section id="services" className="py-28 section-muted">
             <div className="container-custom">
-                <div className="text-center mb-16">
-                    <h2 className="section-title">Nossos Serviços</h2>
-                    <p className="section-subtitle">
-                        Soluções completas e personalizadas para atender todas as necessidades da sua empresa.
-                    </p>
-                    <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-4"></div>
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
+                    <div className="max-w-2xl">
+                        <div className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-[0.3em] mb-4">
+                            Serviços
+                        </div>
+                        <h2 className="section-title text-left mb-4">
+                            Soluções essenciais para manter sua empresa <span className="text-accent">regular</span> e competitiva.
+                        </h2>
+                        <p className="text-lg text-text-dim leading-relaxed">
+                            Atendemos empresas de diferentes portes com processos claros, tecnologia e atendimento consultivo.
+                        </p>
+                    </div>
+                    <a
+                        href="https://wa.me/553173000415"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary group"
+                    >
+                        Falar com um Especialista
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </a>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-b-4 border-transparent hover:border-primary group"
+                            className="group bg-surface p-8 rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1"
                         >
-                            <div className="text-primary mb-4 md:mb-6 p-3 md:p-4 bg-blue-50 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <div className="bg-white text-accent w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 border border-gray-100 group-hover:border-accent/30">
                                 {service.icon}
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">{service.title}</h3>
-                            <p className="text-sm md:text-base text-gray-600">{service.description}</p>
+                            <h3 className="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
+                                {service.title}
+                            </h3>
+                            <p className="text-text-dim leading-relaxed">
+                                {service.description}
+                            </p>
                         </div>
                     ))}
                 </div>

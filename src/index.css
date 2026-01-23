@@ -1,42 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-roboto: 'Roboto', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Montserrat', sans-serif;
 
-  --color-primary: #2563eb;
-  /* Blue 600 */
-  --color-primary-dark: #1d4ed8;
-  /* Blue 700 */
-  --color-primary-light: #60a5fa;
-  /* Blue 400 */
-
-  --color-secondary: #64748b;
-  /* Slate 500 */
-  --color-dark: #1e293b;
-  /* Slate 800 */
+  --color-primary: #0f172a;
+  --color-accent: #2563eb;
+  --color-accent-dark: #1d4ed8;
+  --color-accent-light: #60a5fa;
+  --color-surface: #f2f5f9;
+  --color-text-main: #334155;
+  --color-text-dim: #64748b;
 }
 
 @layer base {
   body {
-    font-family: var(--font-roboto);
-    @apply text-gray-700 bg-gray-50;
+    font-family: var(--font-inter);
+    @apply text-text-main antialiased leading-relaxed;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.08), transparent 35%),
+      radial-gradient(circle at 85% 0%, rgba(15, 23, 42, 0.08), transparent 40%),
+      linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins);
+    @apply text-primary font-semibold tracking-tight;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-6 lg:px-12;
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md;
+    @apply bg-accent hover:bg-accent-dark text-white font-medium py-2.5 px-6 rounded-full transition-all duration-300 shadow-none hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-gray-300 text-primary hover:border-accent hover:text-accent font-medium py-2.5 px-6 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-2xl shadow-black/5 rounded-3xl p-8 transition-all duration-500 hover:shadow-black/10;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center;
+    @apply text-4xl md:text-5xl font-semibold text-primary mb-6 tracking-tight leading-[1.1];
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto;
+    @apply text-lg md:text-xl text-text-dim mb-16 max-w-2xl font-normal leading-relaxed;
+  }
+
+  .section-soft {
+    background:
+      radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.1), transparent 50%),
+      linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
+  }
+
+  .section-muted {
+    background:
+      linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
   }
 }

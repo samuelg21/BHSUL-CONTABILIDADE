@@ -1,38 +1,65 @@
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
-
-const features = [
-    "Atendimento Personalizado",
-    "Equipe Qualificada",
-    "Tecnologia de Ponta",
-    "Agilidade nos Processos",
-    "Segurança da Informação",
-    "Compromisso com Prazos"
-];
+import { BadgeCheck, ShieldCheck, Headset, LineChart } from 'lucide-react';
 
 const Features = () => {
-    return (
-        <section className="py-20 bg-primary-dark text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-white opacity-5"></div>
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-white opacity-5"></div>
+    const items = [
+        {
+            title: 'Compliance e segurança',
+            description: 'Rotinas auditáveis, calendário fiscal e controle de obrigações.',
+            icon: <ShieldCheck size={22} />
+        },
+        {
+            title: 'Atendimento consultivo',
+            description: 'Especialistas disponíveis para orientar decisões e reduzir riscos.',
+            icon: <Headset size={22} />
+        },
+        {
+            title: 'Gestão orientada a dados',
+            description: 'Relatórios claros para apoiar crescimento e previsibilidade.',
+            icon: <LineChart size={22} />
+        },
+        {
+            title: 'Credibilidade no mercado',
+            description: 'Décadas de atuação e relacionamento próximo com empresários.',
+            icon: <BadgeCheck size={22} />
+        }
+    ];
 
-            <div className="container-custom relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+    const badges = ['CRC Regular', 'LGPD', 'Processos Padronizados', 'Atendimento Local'];
+
+    return (
+        <section className="py-24 section-soft">
+            <div className="container-custom">
+                <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">Por que escolher a BHSUL?</h2>
-                        <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                            Mais do que um escritório de contabilidade, somos parceiros do seu negócio. Entendemos os desafios do empreendedorismo e trabalhamos para simplificar a burocracia.
+                        <div className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-[0.3em] mb-4">
+                            Diferenciais
+                        </div>
+                        <h2 className="section-title text-left">
+                            Confiança, método e tecnologia para sua contabilidade funcionar de verdade.
+                        </h2>
+                        <p className="text-lg text-text-dim leading-relaxed max-w-xl">
+                            Nossa atuação combina processos rigorosos e atendimento humano para gerar tranquilidade
+                            fiscal e clareza financeira.
                         </p>
-                        <a href="#contact" className="inline-block bg-white text-primary-dark font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
-                            Conheça nossos diferenciais
-                        </a>
+
+                        <div className="mt-8 flex flex-wrap gap-3">
+                            {badges.map((badge) => (
+                                <span key={badge} className="px-4 py-2 rounded-full bg-white text-xs uppercase tracking-[0.25em] text-text-dim border border-gray-200">
+                                    {badge}
+                                </span>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-6">
-                        {features.map((feature, index) => (
-                            <div key={index} className="flex items-center gap-3 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                                <CheckCircle className="text-primary-light flex-shrink-0" size={24} />
-                                <span className="font-medium">{feature}</span>
+                        {items.map((item) => (
+                            <div key={item.title} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                                <div className="bg-accent/10 text-accent w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                                    {item.icon}
+                                </div>
+                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                                <p className="text-sm text-text-dim leading-relaxed">{item.description}</p>
                             </div>
                         ))}
                     </div>

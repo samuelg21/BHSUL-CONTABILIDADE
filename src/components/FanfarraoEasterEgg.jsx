@@ -37,7 +37,7 @@ const FanfarraoEasterEgg = () => {
 
     return (
         <div
-            className="fixed z-30 text-red-500 font-bold text-xl md:text-2xl pointer-events-none animate-bounce shadow-white drop-shadow-md"
+            className="fixed z-30 text-red-500 font-semibold text-xl md:text-2xl pointer-events-none animate-bounce shadow-white drop-shadow-md"
             style={{ top: position.top, left: position.left }}
         >
             RAFAEL FANFARRÃO
